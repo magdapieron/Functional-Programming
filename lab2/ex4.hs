@@ -1,3 +1,4 @@
+import GHC.Unicode (toUpper)
 -- Operacje na listach
 
 -- length - dlugosc
@@ -29,3 +30,7 @@ isPalindrome s = s == reverse s
 
 getElemAtIdx :: [Char] -> Int -> Char 
 getElemAtIdx list idx = head (drop idx list)
+
+capitalize :: [Char] -> [Char]
+capitalize w = toUpper(head w) : tail w
+-- capitalize w = (toEnum(fromEnum (head w) - 32)::Char) : tail w
